@@ -8,14 +8,14 @@ module Year2020
     # Call `data` to access either an array of the parsed data, or a single record for a 1-line input file
 
     def part_1
-      data.each do |first|
+      data.to_set.each do |first|
         second = 2020 - first
         return first * second if data.include?(second)
       end
     end
 
     def part_2
-      nil
+      data.combination(3).find{|trio| trio.reduce(:+) == 2020}.reduce(:*)
     end
 
     # Processes each line of the input file and stores the result in the dataset
@@ -25,7 +25,7 @@ module Year2020
 
     # Processes the dataset as a whole
     def process_dataset(set)
-      set.to_set
+      set
     end
   end
 end
