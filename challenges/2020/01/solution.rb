@@ -15,7 +15,7 @@ module Year2020
     end
 
     def part_2
-      data.combination(3).find{|trio| trio.reduce(:+) == 2020}.reduce(:*)
+      data.combination(3).find { |trio| trio.reduce(:+) == 2020 }.reduce(:*)
     end
 
     # Processes each line of the input file and stores the result in the dataset
